@@ -1,34 +1,29 @@
 package stepdefinitionfile;
 
-import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
-
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
 
+import base.baseclass;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import pages.Pageclass;
 
-public class LoginStepDefiniton  {
-	WebDriver d ;
-	@Given("user is on login page")
-	public void user_is_on_login_page() throws Exception {
+
+public class CustomerCreationStep extends baseclass{
+	
+	@Given("user open the application and navigates to home page")
+	public void user_open_the_application_and_navigates_to_home_page() throws Exception {
 		System.setProperty("webdriver.chrome.driver",
-				"C:\\Users\\Admin\\Selenium Jar\\Chrome Driver\\chromedriver_win32\\chromedriver.exe");
+			"C:\\Users\\Admin\\Selenium Jar\\Chrome Driver\\chromedriver_win32\\chromedriver.exe");
 				d = new ChromeDriver();
 				d.get("https://test-semnox.p7devs.com/");
 				d.manage().window().maximize();
 				Thread.sleep(3000);
-	}
-	
-	@When("user enter the vaild {string} and {string}")
-	public void user_enter_the_vaild_and(String username, String password)throws AWTException, Exception {
 		Robot robot = new Robot();
 		robot.keyPress(KeyEvent.VK_P);
 		robot.keyRelease(KeyEvent.VK_P);
@@ -121,35 +116,61 @@ public class LoginStepDefiniton  {
 		Select dropdown = new Select(database);
 		dropdown.selectByIndex(2);
 		Thread.sleep(2000);
-	    d.findElement(By.xpath("//input[@id='login']")).sendKeys(username);
-	    d.findElement(By.xpath("//input[@id='password']")).sendKeys(password);
-	}
-
-	@When("clicks the login button")
-	public void clicks_the_login_button() throws Exception {
-		Thread.sleep(2000);
+	    d.findElement(By.xpath("//input[@id='login']")).sendKeys("admin");
+	    d.findElement(By.xpath("//input[@id='password']")).sendKeys("admin@321");
+	    Thread.sleep(2000);
 	    d.findElement(By.xpath("//button[text()='Log in']")).click();
-	    Thread.sleep(5000); 
+	    Thread.sleep(5000);
 	}
 
-	@Then("user should be navigated to the home page")
-	public void user_should_be_navigated_to_the_home_page() throws Exception {
-		Thread.sleep(4000);
-	    String text = d.getTitle();
-	    System.out.println("The Page Title is : "+ text);
-	   try {
-		   Assert.assertEquals("Subscriptions - Semnox", text);
-		   System.out.println("Successful Login is Done!!!");
-		
-	} catch (AssertionError e) {
-		Assert.assertEquals("Semnox", text);
-		System.out.println("Use the Vaild Credentials***");
-	}   
-	}
-	@Then ("close the browser")
-	public void close_the_browser() throws Exception {
-		Thread.sleep(2000);
-		d.close();
+	@Given("user navigates to Sales module and click Customer button")
+	public void user_navigates_to_sales_module_and_click_customer_button() throws Exception {
+	Thread.sleep(8000);
+		pageclass = new Pageclass(d);
+		pageclass.Create();
 	}
 
-}
+	@When("user click create button")
+	public void user_click_create_button() throws Exception {
+		Thread.sleep(8000);
+		   pageclass.CustomerCreates();
+		   
+	}
+
+	@Then("user fills the field and clicks the save button")
+	public void user_fills_the_field_and_clicks_the_save_button() throws Exception {
+		Thread.sleep(8000);
+	
+			pageclass.Enter();
+	  
+	}
+	
+	@Then("user without fills the field and clicks the save button")
+	public void user_without_fills_the_field_and_clicks_the_save_button() throws Exception {
+		Thread.sleep(5000);
+		pageclass.NegativeScenario();
+	}
+
+	@Then("the user is successfully created the Customer information and take picture {string}")
+	public void the_user_is_successfully_created_the_customer_information_and_take_picture(String screenshot) throws Exception {
+		Thread.sleep(3000);	
+		System.out.println("The User is Successfully Created the Customer Information");
+			Screenshot(screenshot);
+		}
+	
+	@Then("take picture {string}")
+	public void take_picture(String screenshot) throws Exception {
+		Thread.sleep(1000);
+		Screenshot(screenshot);
+		System.out.println("Please fill the Valid Details");
+	}
+	
+	@Then("the browser should close")
+	public void the_browser_should_close() throws Exception {
+		Thread.sleep(5000);
+	    d.close();
+	}
+
+	}
+
+
