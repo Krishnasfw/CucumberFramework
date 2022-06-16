@@ -12,15 +12,15 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
-
-import pages.Pageclass;
-
+import pages.CustomerObjects;
+import pages.QuotationObjects;
 
 
 public class baseclass {
 	
 	public WebDriver d ;
-	public Pageclass pageclass ;
+	public CustomerObjects pageclass ;
+	public QuotationObjects quotation ;
 	public Properties Configproperties() throws IOException {
 		Properties properties = new Properties();
 		FileInputStream file = new FileInputStream(

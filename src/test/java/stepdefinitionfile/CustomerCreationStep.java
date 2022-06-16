@@ -11,7 +11,7 @@ import base.baseclass;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import pages.Pageclass;
+import pages.CustomerObjects;
 
 
 public class CustomerCreationStep extends baseclass{
@@ -126,7 +126,7 @@ public class CustomerCreationStep extends baseclass{
 	@Given("user navigates to Sales module and click Customer button")
 	public void user_navigates_to_sales_module_and_click_customer_button() throws Exception {
 	Thread.sleep(8000);
-		pageclass = new Pageclass(d);
+		pageclass = new CustomerObjects(d);
 		pageclass.Create();
 	}
 

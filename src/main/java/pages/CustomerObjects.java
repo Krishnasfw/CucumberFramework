@@ -9,10 +9,10 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 
-public class Pageclass {
+public class CustomerObjects {
 	
 	public WebDriver d;
-	public Pageclass(WebDriver d1) {
+	public CustomerObjects(WebDriver d1) {
 		this.d = d1;
 		PageFactory.initElements(d1, this);
 	}
