@@ -6,11 +6,12 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "featurefiles/Quotation.feature",
+@CucumberOptions(features = "featurefiles/Purchase.feature",
 		glue = { "stepdefinitionfile","Hooks"}, 
 		stepNotifications = true, 
-		dryRun = false, monochrome = true
-		//,tags = "@Positive"
+		dryRun = false
+		, monochrome = true
+		,tags = "@Negative"
 		//,plugin = {"pretty","html:output/test-output.html","json:target/cucumber-reports/Cucumber.json",
 			//	"junit:target/cucumber-reports/Cucumber.xml"}
 		)

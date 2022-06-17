@@ -1,10 +1,8 @@
 package pages;
 
-import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
 
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -260,6 +258,13 @@ public class QuotationObjects{
 			ValidateButton.click();
 			Thread.sleep(4000);
 }
+			public void QuotationNegativeScenario() throws Exception {
+				Thread.sleep(6000);
+				SaveButton.click();
+				Thread.sleep(2000);
+				
+				
+			}
 
 		
 }

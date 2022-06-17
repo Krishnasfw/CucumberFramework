@@ -1,6 +1,9 @@
 @Quotation 
 Feature: Quotation  feature
-Scenario: Quotation Number Generation Secnario
+
+
+@Positive
+Scenario: Invoice Number Generation Secnario
 
 Given the user opens application and navigates to home page
 And  the user navigates to Sales module and click Quotation button
@@ -13,3 +16,12 @@ And user takes picture "SaleOrder Number"
 Then user click create Invoice button and fill the mandatory fields 
 Then user should click save button and validate button
 And Invoice number is generated and user take picture "Invoice Number"
+
+
+@Negative
+Scenario: Generate Invoice number without Supplier name 
+Given the user opens application and navigates to home page
+And  the user navigates to Sales module and click Quotation button
+When  the user click create button
+Then the user without fills the field and clicks the save button
+And takes the picture as "Negative Quotation" and close the Browser
