@@ -11,7 +11,7 @@ import io.cucumber.junit.CucumberOptions;
 		stepNotifications = true, 
 		dryRun = false
 		, monochrome = true
-		,tags = "@LoginFunction"
+		,tags = "@Positive"
 		,plugin = {"pretty","html:output/test-output.html","json:target/cucumber-reports/Cucumber.json",
 				"junit:target/cucumber-reports/Cucumber.xml"}
 		)

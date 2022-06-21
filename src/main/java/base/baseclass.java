@@ -13,6 +13,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
 import pages.CustomerObjects;
+import pages.DatabaseSelectionObjects;
 import pages.LoginObjects;
 import pages.PurchaseObjects;
 import pages.QuotationObjects;
@@ -22,6 +23,7 @@ public class baseclass {
 	
 	public WebDriver d ;
 	public LoginObjects login;
+	public DatabaseSelectionObjects data;
 	public CustomerObjects pageclass ;
 	public QuotationObjects quotation ;
 	public PurchaseObjects purchase ;

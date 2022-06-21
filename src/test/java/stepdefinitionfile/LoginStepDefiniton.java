@@ -2,15 +2,14 @@ package stepdefinitionfile;
 import java.awt.AWTException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
 import base.baseclass;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import pages.DatabaseSelectionObjects;
 import pages.LoginObjects;
 
 public class LoginStepDefiniton extends baseclass {
@@ -29,11 +28,9 @@ public class LoginStepDefiniton extends baseclass {
 	public void user_enter_the_vaild_and(String username, String password)throws AWTException, Exception {
 		login = new LoginObjects();
 		login.LoginApplication();
-		WebElement database = d.findElement(By.xpath("//select[@id='db']"));
-		
-		Select dropdown = new Select(database);
-		dropdown.selectByIndex(3);
-		Thread.sleep(5000);
+		data = new DatabaseSelectionObjects(d);
+		data.Database();
+		Thread.sleep(3000);
 	    d.findElement(By.xpath("//input[@id='login']")).sendKeys(username);
 	    d.findElement(By.xpath("//input[@id='password']")).sendKeys(password); 
 	}
