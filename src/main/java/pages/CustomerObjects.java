@@ -66,7 +66,7 @@ public class CustomerObjects {
 		Name.sendKeys("Video Game Kadai");
 		Street.sendKeys("Computer Thidal");
 		City.sendKeys("Vilaiyatu Maidhanam");
-		Zip.sendKeys("6000028");
+		Zip.sendKeys("600028");
 		State.click();
 		State.sendKeys("Tamil Nadu");
 		

@@ -13,6 +13,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
 import pages.CustomerObjects;
+import pages.LoginObjects;
 import pages.PurchaseObjects;
 import pages.QuotationObjects;
 
@@ -20,9 +21,11 @@ import pages.QuotationObjects;
 public class baseclass {
 	
 	public WebDriver d ;
+	public LoginObjects login;
 	public CustomerObjects pageclass ;
 	public QuotationObjects quotation ;
 	public PurchaseObjects purchase ;
+	
 	public Properties Configproperties() throws IOException {
 		Properties properties = new Properties();
 		FileInputStream file = new FileInputStream(
