@@ -159,7 +159,7 @@ public class PurchaseObjects {
 			DateClickbutton.click();
 			Thread.sleep(8000);
 			ValidateButton.click();
-			Thread.sleep(8000);
+			Thread.sleep(12000);
 			
 		}
 		

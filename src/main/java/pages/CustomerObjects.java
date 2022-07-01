@@ -14,7 +14,7 @@ public class CustomerObjects {
 	public WebDriver d;
 	public CustomerObjects(WebDriver d1) {
 		this.d = d1;
-		PageFactory.initElements(d1, this);
+		PageFactory.initElements(d1, this);	
 	}
 	
 	@FindBy(xpath ="//*[@id=\"oe_main_menu_placeholder\"]/ul[1]/li[2]/a")

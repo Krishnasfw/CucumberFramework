@@ -7,7 +7,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.CustomerObjects;
 import pages.DatabaseSelectionObjects;
-import pages.LoginObjects;
+//import pages.LoginObjects;
 import pages.Loginclick;
 
 public class CustomerCreationStep extends baseclass {
@@ -20,8 +20,8 @@ public class CustomerCreationStep extends baseclass {
 		d.manage().window().maximize();
 		Thread.sleep(3000);
 
-		login = new LoginObjects();
-		login.LoginApplication();
+		//login = new LoginObjects();
+		//login.LoginApplication();
 		Thread.sleep(2000);
 		data = new DatabaseSelectionObjects(d);
 		data.Database();
@@ -41,15 +41,12 @@ public class CustomerCreationStep extends baseclass {
 	public void user_click_create_button() throws Exception {
 		Thread.sleep(8000);
 		pageclass.CustomerCreates();
-
 	}
 
 	@Then("user fills the field and clicks the save button")
 	public void user_fills_the_field_and_clicks_the_save_button() throws Exception {
 		Thread.sleep(8000);
-
 		pageclass.Enter();
-
 	}
 
 	@Then("user without fills the field and clicks the save button")
@@ -76,7 +73,7 @@ public class CustomerCreationStep extends baseclass {
 	@Then("the browser should close")
 	public void the_browser_should_close() throws Exception {
 		Thread.sleep(5000);
-		d.close();
+		d.quit();
 	}
 
 }

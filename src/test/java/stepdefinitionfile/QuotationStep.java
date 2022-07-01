@@ -6,7 +6,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.DatabaseSelectionObjects;
-import pages.LoginObjects;
+//import pages.LoginObjects;
 import pages.Loginclick;
 import pages.QuotationObjects;
 
@@ -19,9 +19,8 @@ public class QuotationStep extends baseclass {
 		d.get(Configproperties().getProperty("url"));
 		d.manage().window().maximize();
 		Thread.sleep(3000);
-
-		login = new LoginObjects();
-		login.LoginApplication();
+		//login = new LoginObjects();
+		//login.LoginApplication();
 
 		Thread.sleep(2000);
 		data = new DatabaseSelectionObjects(d);
@@ -102,7 +101,7 @@ public class QuotationStep extends baseclass {
 	public void takes_the_picture_as_and_close_the_browser(String negative) throws Exception {
 		Screenshot(negative);
 		Thread.sleep(5000);
-		d.close();
+		d.quit();
 	}
 
 }

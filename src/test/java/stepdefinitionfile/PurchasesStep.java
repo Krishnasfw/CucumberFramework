@@ -6,7 +6,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.DatabaseSelectionObjects;
-import pages.LoginObjects;
+//import pages.LoginObjects;
 import pages.Loginclick;
 import pages.PurchaseObjects;
 
@@ -20,8 +20,8 @@ public class PurchasesStep extends baseclass {
 		d.manage().window().maximize();
 		Thread.sleep(3000);
 
-		login = new LoginObjects();
-		login.LoginApplication();
+		//login = new LoginObjects();
+		//login.LoginApplication();
 
 		Thread.sleep(2000);
 		data = new DatabaseSelectionObjects(d);
@@ -86,7 +86,7 @@ public class PurchasesStep extends baseclass {
 	public void the_user_takes_the_negative_case_picture_as_and_close_the_browser(String negative) throws Exception {
 		Screenshot(negative);
 		Thread.sleep(5000);
-		d.close();
+		d.quit();
 	}
 
 }

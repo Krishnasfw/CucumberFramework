@@ -1,4 +1,5 @@
 package stepdefinitionfile;
+
 import java.awt.AWTException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -10,7 +11,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.DatabaseSelectionObjects;
-import pages.LoginObjects;
+//import pages.LoginObjects;
 
 public class LoginStepDefiniton extends baseclass {
 	WebDriver d ;
@@ -26,8 +27,8 @@ public class LoginStepDefiniton extends baseclass {
 	
 	@When("user enter the vaild {string} and {string}")
 	public void user_enter_the_vaild_and(String username, String password)throws AWTException, Exception {
-		login = new LoginObjects();
-		login.LoginApplication();
+		//login = new LoginObjects();
+		//login.LoginApplication();
 		data = new DatabaseSelectionObjects(d);
 		data.Database();
 		Thread.sleep(3000);
@@ -59,7 +60,7 @@ public class LoginStepDefiniton extends baseclass {
 	@Then ("close the browser")
 	public void close_the_browser() throws Exception {
 		Thread.sleep(2000);
-		d.close();
+		d.quit();
 	}
 
 }

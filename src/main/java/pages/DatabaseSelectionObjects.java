@@ -17,7 +17,7 @@ public class DatabaseSelectionObjects {
 	WebElement Databaseselection;
 	
 	public void Database() throws Exception {
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		Select dropdown = new Select(Databaseselection);
 		dropdown.selectByIndex(3);
 		Thread.sleep(2000);

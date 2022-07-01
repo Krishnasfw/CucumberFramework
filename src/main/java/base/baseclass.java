@@ -8,6 +8,7 @@ import java.util.Date;
 import java.util.Properties;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -29,6 +30,7 @@ public class baseclass {
 	public CustomerObjects pageclass ;
 	public QuotationObjects quotation ;
 	public PurchaseObjects purchase ;
+	public static Logger logger;
 	
 	public Properties Configproperties() throws IOException {
 		Properties properties = new Properties();

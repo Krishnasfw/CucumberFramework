@@ -256,7 +256,7 @@ public class QuotationObjects{
 			InvoiceSaveButton.click();
 			Thread.sleep(5000);
 			ValidateButton.click();
-			Thread.sleep(4000);
+			Thread.sleep(8000);
 }
 			public void QuotationNegativeScenario() throws Exception {
 				Thread.sleep(6000);
